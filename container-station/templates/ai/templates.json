@@ -8,13 +8,13 @@
       "description": "Ollama is an open-source tool that runs large language models (LLMs) directly on a local machine. This makes it particularly appealing to AI developers, researchers, and businesses concerned with data control and privacy.",
       "name": "compose-ollama",
       "version": "0.6.6",
-      "logo": "/container-station/templates/ai/icon/ollama.png",
+      "logo": "/app-templates-json/container-station/templates/ai/icon/ollama.png",
       "location": "https://hub.docker.com/r/ollama/ollama",
       "platform": "linux/amd64",
       "categories": [
         "utilities"
       ],
-      "composefile": "/container-station/templates/ai/compose/ollama/docker-compose.yaml",
+      "composefile": "/app-templates-json/container-station/templates/ai/compose/ollama/docker-compose.yaml",
       "env": [
         {
           "name": "HTTP_PORT",
@@ -45,13 +45,13 @@
       "description": "The all-in-one AI app you were looking for. Chat with your docs, use AI Agents, hyper-configurable, multi-user, & no frustrating set up required.",
       "name": "compose-anything-llm",
       "version": "1.8.0",
-      "logo": "/container-station/templates/ai/icon/anythingllm.png",
+      "logo": "/app-templates-json/container-station/templates/ai/icon/anythingllm.png",
       "location": "https://hub.docker.com/r/mintplexlabs/anythingllm",
       "platform": "linux/amd64",
       "categories": [
         "utilities"
       ],
-      "composefile": "/container-station/templates/ai/compose/anything-llm/docker-compose.yaml",
+      "composefile": "/app-templates-json/container-station/templates/ai/compose/anything-llm/docker-compose.yaml",
       "env": [
         {
           "name": "HTTP_PORT",
@@ -74,13 +74,13 @@
       "description": "The all-in-one AI app you were looking for. Chat with your docs, use AI Agents, hyper-configurable, multi-user, & no frustrating set up required.",
       "name": "compose-anything-llm",
       "version": "1.7.5",
-      "logo": "/container-station/templates/ai/icon/anythingllm.png",
+      "logo": "/app-templates-json/container-station/templates/ai/icon/anythingllm.png",
       "location": "https://hub.docker.com/r/mintplexlabs/anythingllm",
       "platform": "linux/arm64",
       "categories": [
         "utilities"
       ],
-      "composefile": "/container-station/templates/ai/compose/anything-llm/docker-compose.yaml",
+      "composefile": "/app-templates-json/container-station/templates/ai/compose/anything-llm/docker-compose.yaml",
       "env": [
         {
           "name": "HTTP_PORT",
@@ -103,13 +103,13 @@
       "description": "Easy and Efficient LLM Fine-Tuning",
       "name": "compose-llamafactory",
       "version": "0.9.2",
-      "logo": "/container-station/templates/ai/icon/llamafactory.png",
+      "logo": "/app-templates-json/container-station/templates/ai/icon/llamafactory.png",
       "location": "https://hub.docker.com/repository/docker/edhongcy/docker-cuda-llamafactory/general",
       "platform": "linux/amd64",
       "categories": [
         "utilities"
       ],
-      "composefile": "/container-station/templates/ai/compose/llama-factory/docker-compose.yaml",
+      "composefile": "/app-templates-json/container-station/templates/ai/compose/llama-factory/docker-compose.yaml",
       "env": [
         {
           "name": "HTTP_PORT",

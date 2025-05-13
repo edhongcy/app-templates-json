@@ -1,0 +1,56 @@
+services:
+  ollama:
+    image: ollama/ollama:0.6.6
+    volumes:
+      - ollama:/root/.ollama
+    restart: unless-stopped
+    ports:
+      - 11434:11434
+    environment:
+      - OLLAMA_SCHED_SPREAD=1
+      - OLLAMA_ORIGINS = *
+    networks:
+      qnet-network:
+          ipv4_address: "${QNET_STATIC_IP}"
+      ai-net: {}
+    deploy:
+      resources:
+        reservations:
+          devices: []
+
+  open-webui:
+    image: ghcr.io/open-webui/open-webui:0.6.6
+    volumes:
+      - open-webui:/app/backend/data
+    depends_on:
+      - ollama
+    ports:
+      - ${HTTP_PORT}:8080
+    networks:
+      - ai-net
+    environment:
+      - 'OLLAMA_BASE_URL=http://ollama:11434'
+      - 'WEBUI_SECRET_KEY='
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    restart: unless-stopped
+
+volumes:
+  ollama:
+  open-webui:
+
+networks:
+  qnet-network:
+    driver_opts:
+      iface: ${QNET_INTERFACE}
+    driver: qnet
+    ipam:
+      driver: qnet
+      options:
+        iface: ${QNET_INTERFACE}
+      config:
+        - subnet: ${QNET_SUBNET}
+          gateway: ${QNET_GATEWAY}
+
+  ai-net:
+    driver: bridge

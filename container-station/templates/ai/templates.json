@@ -1,0 +1,133 @@
+{
+  "version": "2",
+  "templates": [
+    {
+      "type": 3,
+      "title": "Ollama",
+      "sub_title": "0.6.6",
+      "description": "Ollama is an open-source tool that runs large language models (LLMs) directly on a local machine. This makes it particularly appealing to AI developers, researchers, and businesses concerned with data control and privacy.",
+      "name": "compose-ollama",
+      "version": "0.6.6",
+      "logo": "/container-station/templates/ai/icon/ollama.png",
+      "location": "https://hub.docker.com/r/ollama/ollama",
+      "platform": "linux/amd64",
+      "categories": [
+        "utilities"
+      ],
+      "composefile": "/container-station/templates/ai/compose/ollama/docker-compose.yaml",
+      "env": [
+        {
+          "name": "HTTP_PORT",
+          "label": "HTTP port (optional)",
+          "description": "HTTP web port for Ollama Application web UI.",
+          "port": true
+        }
+      ],
+      "network_setting": {
+        "mode": "bridge",
+        "static_ip": true
+      },
+      "gpu_setting": {},
+      "default_web_port": {
+        "service": "open-webui",
+        "container_port": 8080
+      },
+      "notice": "Ensure to enter different numbers for HTTP port.",
+      "support_os": ["QTS"],
+      "requirements": {
+        "cs_version": "3.1.1.1343"
+      }
+    },
+    {
+      "type": 3,
+      "title": "Anything LLM",
+      "sub_title": "1.8.0",
+      "description": "The all-in-one AI app you were looking for. Chat with your docs, use AI Agents, hyper-configurable, multi-user, & no frustrating set up required.",
+      "name": "compose-anything-llm",
+      "version": "1.8.0",
+      "logo": "/container-station/templates/ai/icon/anythingllm.png",
+      "location": "https://hub.docker.com/r/mintplexlabs/anythingllm",
+      "platform": "linux/amd64",
+      "categories": [
+        "utilities"
+      ],
+      "composefile": "/container-station/templates/ai/compose/anything-llm/docker-compose.yaml",
+      "env": [
+        {
+          "name": "HTTP_PORT",
+          "label": "HTTP port (optional)",
+          "description": "HTTP web port for Anything LLM Application Dashboard.",
+          "port": true
+        }
+      ],
+      "default_web_port": {
+          "service": "anythingllm",
+          "container_port": 3001
+      },
+      "notice": "Ensure to enter different numbers for HTTP port.",
+      "support_os": ["QTS"]
+    },
+    {
+      "type": 3,
+      "title": "Anything LLM",
+      "sub_title": "1.8.0",
+      "description": "The all-in-one AI app you were looking for. Chat with your docs, use AI Agents, hyper-configurable, multi-user, & no frustrating set up required.",
+      "name": "compose-anything-llm",
+      "version": "1.7.5",
+      "logo": "/container-station/templates/ai/icon/anythingllm.png",
+      "location": "https://hub.docker.com/r/mintplexlabs/anythingllm",
+      "platform": "linux/arm64",
+      "categories": [
+        "utilities"
+      ],
+      "composefile": "/container-station/templates/ai/compose/anything-llm/docker-compose.yaml",
+      "env": [
+        {
+          "name": "HTTP_PORT",
+          "label": "HTTP port (optional)",
+          "description": "HTTP web port for Anything LLM Application Dashboard.",
+          "port": true
+        }
+      ],
+      "default_web_port": {
+          "service": "anythingllm",
+          "container_port": 3001
+      },
+      "notice": "Ensure to enter different numbers for HTTP port.",
+      "support_os": ["QTS"]
+    },
+    {
+      "type": 3,
+      "title": "LLaMA-Factory",
+      "sub_title": "0.9.2",
+      "description": "Easy and Efficient LLM Fine-Tuning",
+      "name": "compose-llamafactory",
+      "version": "0.9.2",
+      "logo": "/container-station/templates/ai/icon/llamafactory.png",
+      "location": "https://hub.docker.com/repository/docker/edhongcy/docker-cuda-llamafactory/general",
+      "platform": "linux/amd64",
+      "categories": [
+        "utilities"
+      ],
+      "composefile": "/container-station/templates/ai/compose/llama-factory/docker-compose.yaml",
+      "env": [
+        {
+          "name": "HTTP_PORT",
+          "label": "HTTP port (optional)",
+          "description": "HTTP web port for Ollama Application web UI.",
+          "port": true
+        }
+      ],
+      "gpu_setting": {},
+      "default_web_port": {
+        "service": "llamafactory",
+        "container_port": 7860
+      },
+      "notice": "Ensure to enter different numbers for HTTP port.",
+      "support_os": ["QTS"],
+      "requirements": {
+        "cs_version": "3.1.1.1343"
+      }
+    }
+  ]
+}

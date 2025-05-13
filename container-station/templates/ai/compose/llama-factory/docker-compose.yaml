@@ -1,0 +1,22 @@
+services:
+  llamafactory:
+    image: edhongcy/docker-cuda-llamafactory:20250508
+    volumes:
+      - /share/Public/llamafactory/hf_cache:/root/.cache/huggingface
+      - /share/Public/llamafactory/ms_cache:/root/.cache/modelscope
+      - /share/Public/llamafactory/om_cache:/root/.cache/openmind
+      - /share/Public/llamafactory/data:/app/data
+      - /share/Public/llamafactory/output:/app/output
+    restart: unless-stopped
+    ports:
+      - 7860:7860
+      - 8000:8000
+    ipc: host
+    tty: true
+    shm_size: "16gb"
+    stdin_open: true
+    command: bash
+    deploy:
+      resources:
+        reservations:
+          devices: []

@@ -1,0 +1,17 @@
+services:
+  anythingllm:
+    image: mintplexlabs/anythingllm:1.8.0
+    environment:
+      - STORAGE_DIR=/app/server/storage
+    user: root
+    volumes:
+      - /share/Public/anythingllm/server/storage:/app/server/storage
+      - /share/Public/anythingllm/server/.env:/app/server/.env
+      - /share/Public/anythingllm/collector/hotdir/:/app/collector/hotdir
+      - /share/Public/anythingllm/collector/outputs/:/app/collector/outputs
+    ports:
+      - ${HTTP_PORT}:3001
+    cap_add:
+      - SYS_ADMIN
+    restart: unless-stopped
+
